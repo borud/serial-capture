@@ -1,9 +1,4 @@
-Hello
-Stable Library
-=========================================
-Native lib Version = RXTX-2.1-7
-Java lib Version   = RXTX-2.1-7
-0,136
+Time,Value
 50,262
 100,261
 150,263
@@ -35083,4 +35078,4 @@ Java lib Version   = RXTX-2.1-7
 1777373,263
 1777424,266
 1777474,265
-1777Experimental:  JNI_OnLoad called.
+
