@@ -1,7 +1,6 @@
 package org.borud.capture;
 
 import java.io.InputStream;
-import java.io.OutputStream;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
@@ -25,7 +24,6 @@ public class Serial implements SerialPortEventListener {
     private SerialPort serialPort;
 
     private InputStream input;
-    private OutputStream output;
 
     private String portName;
     private int dataRate;
@@ -66,14 +64,11 @@ public class Serial implements SerialPortEventListener {
             serialPort = (SerialPort) cpi.open("capture", TIMEOUT);
 
             // set port parameters
-            serialPort.setSerialPortParams(dataRate,
-                                           SerialPort.DATABITS_8,
-                                           SerialPort.STOPBITS_1,
-                                           SerialPort.PARITY_NONE);
+            serialPort.setSerialPortParams(dataRate, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
+                    SerialPort.PARITY_NONE);
 
             // open the streams
-            input = serialPort.getInputStream();
-            output = serialPort.getOutputStream();
+            input = serialPort.getInputStream();            
 
             // add event listeners
             serialPort.addEventListener(this);
@@ -89,7 +84,7 @@ public class Serial implements SerialPortEventListener {
     @Override
     public void serialEvent(SerialPortEvent ev) {
         try {
-            switch(ev.getEventType()) {
+            switch (ev.getEventType()) {
             case SerialPortEvent.DATA_AVAILABLE:
                 int available = input.available();
                 byte chunk[] = new byte[available];

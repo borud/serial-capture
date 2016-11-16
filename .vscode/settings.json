@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.fontFamily": "Droid Sans Mono, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "telemetry.enableTelemetry": false,
+    "editor.wrappingColumn": 100
+}
